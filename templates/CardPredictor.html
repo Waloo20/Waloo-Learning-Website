@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FullName.com</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+      .navbar-toggler-icon span {
+  background-color: #fff;
+}
+    </style>
+  </head>
+      <body>
+        {% include 'navbar.html' %}
+        <div class="container">
+        <h1 class="text-danger">Yugioh Probability Algorithm</h1>
+      <p> 
+       My favorite game of all time is Yu-Gi-Oh, a card game in which you summon monsters and use spells for powerful effects. Without delving too deep into the game's mechanics, the basic goal is to build a deck with the right monsters, spells, and traps to win. This means your deck must have excellent card interactions, be consistent, and competitive with other people's decks. It may sound simple enough: just build a deck, playtest it against others, remove cards that don't work, and add more cards that do. However, this approach can be time-consuming and prone to errors in judgment from the player, who may not make the most rational decisions regarding which cards to include or exclude.<br><br>
+
+I know that I find some cards very satisfying to use and play, but that doesn't mean they are useful for winning or synergistic with the rest of the cards. Additionally, a player may include cards to counter a specific strategy that frustrates them, even though statistically, that strategy is niche, and the cards they are adding will hurt their chances against other matchups in the long run. So, how can this be addressed? With machines and math, of course!<br><br>
+
+Decks that perform well usually win more often and share a common pool of cards. We can infer that cards frequently used by winning decks are effective. Therefore, we can track different decks and rate the cards they are using; if a deck wins, its rating goes up, and if it loses, its rating goes down. This approach provides a general baseline of useful to useless cards but doesn't account for niche utilities, card combinations, or metagame shifts.<br><br>
+
+These aspects could be incorporated by creating an even more complex algorithm that analyzes a player's starting hand and the cards played by the opponent to determine if the cards they are using contribute to a win or commonly lead to a loss against other cards. This helps with card combinations but still leaves out niche interactions that may be highly effective but unexplored due to their perceived lack of value. Just as a chess AI will take risky moves that a human never would because it can see that it is the right move, a person may not be willing to try certain card combinations due to superficial reasons, leaving their potential value untapped.<br><br>
+
+An AI that plays Yu-Gi-Oh and strategically, yet somewhat randomly, uses cards to discover interesting or useful interactions could log these findings as data and report them back to the user, potentially addressing this issue. Of course, training an AI to play Yu-Gi-Oh in a manner that is actually productive for research purposes wouldn't be easy, but the potential benefits could make it worth the effort. 
+      </p>
+        </div>
+        {% include 'footer.html' %}
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      </body>
+</html>

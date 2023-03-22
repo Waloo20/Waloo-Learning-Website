@@ -1,50 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <title>My Website</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FullName.com</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <style>
-      h2 {
-        font-size: 45px;
-        font-family: Calibri;
-        font-weight: normal;
-        color: rgb(0,0,100);
-        text-align: center;
-      }
-      #banner{
-        width: 100%;
-        height: 600px;
-        object-fit: cover;
-      }
-      h1{
-        font-size: 30px;
-        font-family: Calibri;
-        font-weight: normal;
-        color: rgb(0,0,100);
-        text-align: center;
-      }
-      .bodytext{
-        color: rgb(0,0,100);
-        font-family: Calibri;
-      }
-      #container{
-        max-width: 720px;
-        margin: 0 auto 0 auto;
-      }
+      .navbar-toggler-icon span {
+  background-color: #fff;
+}
     </style>
   </head>
   <body>
-    <div id="container">
-    <h2>This is my first attempt at a good website.</h2>
-    <img id="banner" src="https://images.unsplash.com/photo-1677446320988-e65803c103f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80">
-    <h1>About Me</h1>
-    <p class="bodytext">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor mauris eu turpis mattis lobortis. Pellentesque blandit consequat tortor vel rutrum. Integer cursus elit id magna hendrerit, eget ultricies magna molestie. Proin bibendum mi vel turpis ullamcorper, eu scelerisque mi aliquet. Etiam euismod dolor elit, vel maximus tellus finibus eu. Sed eget leo at est laoreet pulvinar. Sed non urna lorem. Vivamus ac nulla urna. Integer ullamcorper ac nunc vitae aliquet. Sed et tincidunt justo. Sed vel sapien pharetra, maximus erat vel, pellentesque massa. Donec bibendum sapien vel ipsum blandit fringilla. Sed vulputate nibh eget neque accumsan, a rhoncus mauris malesuada. Donec ut mi eget velit commodo mollis vel nec felis.
-    </p>
-      <div style="text-align:center;">
-    <button>Contact</button>
-        <p>Made by Waloo20</p>
-      </div>
-      </div>
+    {% include 'navbar.html' %}
+    <div class="container">
+      <img class="mx-auto img-fluid mt-3 mb-4" src="/static/Name_OpenSans_Red.png" alt="Raul Leon-Cuevas">
+
+ <div class = "row">
+        <div class = "col">
+          <h1>Welcome!</h1>
+          <p class= "lead" >My name is Raul Leon-Cuevas, and I'm 24 years old. I currently live in Hattiesburg, where I attend The University of Southern Mississippi as a Microbiology and Computer Science Major. </p>
+        </div>
+   <div class = "col-3">  
+      <img src="/static/Self_Portrait_Home.jpg" class="d-none d-md-block rounded w-100" alt="...">
+     </div>
+     </div>
+  <div class="row bg-dark mt-3 border-5 border-danger">
+      {% for datas in data %}
+        <div class="col">
+          <h4 class = "text-center text-white"> 
+            {{datas['Head']}}
+          </h4>
+          <p class="text-center text-white">
+            <strong>
+            {{datas['Content']|replace('\n', '<br>')|safe}}
+            </strong>
+          </p>
+        </div>
+      {% endfor %}
+  </div>
+      
+      <div class="container-fluid mt-3 mb-3">
+        <h3 class = "text-center"> Notable Things </h3>
+        <div class="row justify-content-between">
+            <div class="card" style="width: 48%; padding: 0;">
+  <img src="/static/StuffedAnimal.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Ai Generated Content</h5>
+    <p class="card-text">How I used AI generated art and other ai tools to build this very website.
+       </p>
+    <div class="text-center">
+    <a href="/blog" class="fw-bold btn btn-danger mb-3 text-decoration-none">Read more</a>
+    </div>
+  </div>
+</div>
+            <div class="card " style="width: 48%; padding: 0;">
+  <img src="/static/Computer_Cards.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card Predictor Project</h5>
+    <p class="card-text">An algorithm which will predict the win ratio of Yugioh!</p>
+    <div class="text-center">
+    <a href="/CardPredictor" class="fw-bold btn btn-danger text-center mb-3 text-decoration-none">Read more</a>
+    </div>
+  </div>
+</div>
+          </div>
+        <div class="row justify-content-between mt-3">
+            <div class="card" style="width: 48%; padding: 0;">
+  <img src="/static/Website_Project.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Website Project</h5>
+    <p class="card-text">Learn about the system design of my website project.</p>
+    <div class="text-center">
+      <a href="/WebsiteProject" class="fw-bold btn btn-danger text-center mb-3 text-decoration-none">Read more</a>
+    </div>
+  </div>
+</div>
+          
+            <div class="card" style="width: 48%; padding: 0;">
+  <img src="/static/CactusGarden_Project.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Cactus Garden Project</h5>
+    <p class="card-text">My personal project and hobby, growing cactus from seed!</p>
+    <div class="text-center">
+      <a href="/CactusProject" class="fw-bold btn btn-danger text-center mb-3 text-decoration-none">Read more</a>
+    </div>
+  </div>
+</div>
+          </div>
+          </div>
+            </div>
+        </div>
+    {% include 'footer.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
-  
 </html>
