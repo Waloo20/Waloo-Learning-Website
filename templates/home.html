@@ -25,21 +25,6 @@
       <img src="/static/Self_Portrait_Home.jpg" class="d-none d-md-block rounded w-100" alt="...">
      </div>
      </div>
-  <div class="row bg-dark mt-3 border-5 border-danger">
-      {% for datas in data %}
-        <div class="col">
-          <h4 class = "text-center text-white"> 
-            {{datas['Head']}}
-          </h4>
-          <p class="text-center text-white">
-            <strong>
-            {{datas['Content']|replace('\n', '<br>')|safe}}
-            </strong>
-          </p>
-        </div>
-      {% endfor %}
-  </div>
-      
       <div class="container-fluid mt-3 mb-3">
         <h3 class = "text-center"> Notable Things </h3>
         <div class="row justify-content-between">
